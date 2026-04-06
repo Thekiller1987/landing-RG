@@ -29,9 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3. Scroll Animations using Intersection Observer
-    const faders = document.querySelectorAll('.fade-in');
-    const slidersLeft = document.querySelectorAll('.slide-in-left');
-    const slidersRight = document.querySelectorAll('.slide-in-right');
+    const animatedElements = document.querySelectorAll('.fade-in, .fade-up, .fade-right, .fade-left, .slide-left, .slide-right');
 
     const appearOptions = {
         threshold: 0.15,
@@ -49,15 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, appearOptions);
 
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
-
-    slidersLeft.forEach(slider => {
-        appearOnScroll.observe(slider);
-    });
-
-    slidersRight.forEach(slider => {
-        appearOnScroll.observe(slider);
+    animatedElements.forEach(el => {
+        appearOnScroll.observe(el);
     });
 });
