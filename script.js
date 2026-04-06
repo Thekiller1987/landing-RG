@@ -86,3 +86,27 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 });
+
+// ==========================================================================
+// Lightbox Global Functions
+// ==========================================================================
+function openLightbox(imageSrc) {
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    
+    if(modal && modalImg) {
+        modal.style.display = 'block';
+        modalImg.src = imageSrc;
+        // Evitar que la página haga scroll mientras el modal está abierto
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('lightboxModal');
+    if(modal) {
+        modal.style.display = 'none';
+        // Restaurar el scroll
+        document.body.style.overflow = '';
+    }
+}

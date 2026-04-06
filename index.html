@@ -153,28 +153,34 @@
         </div>
 
         <div class="container gallery-grid">
-            <div class="gallery-item align-reveal">
+            <div class="gallery-item align-reveal" onclick="openLightbox('imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.02.59_PM.webp')">
                 <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.02.59_PM.webp" alt="Instalaciones MultirepuestosRG 1">
+                <div class="expand-icon"><i class="fa-solid fa-expand"></i></div>
                 <div class="gallery-overlay"><h4>Atención Personalizada</h4></div>
             </div>
-            <div class="gallery-item align-reveal delay-1">
+            <div class="gallery-item align-reveal delay-1" onclick="openLightbox('imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM.webp')">
                 <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM.webp" alt="Instalaciones MultirepuestosRG 2">
+                <div class="expand-icon"><i class="fa-solid fa-expand"></i></div>
                 <div class="gallery-overlay"><h4>Stock Ilimitado</h4></div>
             </div>
-            <div class="gallery-item align-reveal delay-2">
+            <div class="gallery-item align-reveal delay-2" onclick="openLightbox('imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_1.webp')">
                 <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_1.webp" alt="Instalaciones MultirepuestosRG 3">
+                <div class="expand-icon"><i class="fa-solid fa-expand"></i></div>
                 <div class="gallery-overlay"><h4>Herramientas y Accesorios</h4></div>
             </div>
-            <div class="gallery-item align-reveal">
+            <div class="gallery-item align-reveal" onclick="openLightbox('imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_2.webp')">
                 <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_2.webp" alt="Instalaciones MultirepuestosRG 4">
+                <div class="expand-icon"><i class="fa-solid fa-expand"></i></div>
                 <div class="gallery-overlay"><h4>Repuestos Originales</h4></div>
             </div>
-            <div class="gallery-item align-reveal delay-1">
+            <div class="gallery-item align-reveal delay-1" onclick="openLightbox('imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_3.webp')">
                 <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_3.webp" alt="Instalaciones MultirepuestosRG 5">
+                <div class="expand-icon"><i class="fa-solid fa-expand"></i></div>
                 <div class="gallery-overlay"><h4>Las Mejores Marcas</h4></div>
             </div>
-            <div class="gallery-item align-reveal delay-2">
+            <div class="gallery-item align-reveal delay-2" onclick="openLightbox('imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_4.webp')">
                 <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_4.webp" alt="Instalaciones MultirepuestosRG 6">
+                <div class="expand-icon"><i class="fa-solid fa-expand"></i></div>
                 <div class="gallery-overlay"><h4>Expertos en Mecánica</h4></div>
             </div>
         </div>
@@ -218,6 +224,12 @@
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.002-3.181-2.585-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.205.534 1.292.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087.159.058 1.011.477 1.184.564.173.087.289.129.332.202.043.073.043.423-.101.827z"></path>
         </svg>
     </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+    </div>
 
     <script src="script.js"></script>
 </body>
