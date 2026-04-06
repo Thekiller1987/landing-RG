@@ -3,163 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Multirepuestos rG. Especialistas en repuestos Bajaj, Genesis, Motul y Liqui Moly.">
-    <title>Multirepuestos rG | Liderazgo en Repuestos</title>
+    <meta name="description" content="MultirepuestosRG - Expertos en repuestos y accesorios para motocicletas. Las mejores marcas mundiales.">
+    <title>MultirepuestosRG | Potencia en Cada Repuesto</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Cache Buster -->
-    <link rel="stylesheet" href="styles.css?v=2.1">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css?v=3.0">
 </head>
-<body class="light-mode">
+<body class="dark-theme">
+    
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#inicio" class="logo-wrapper">
-                <img src="logo%20motos.webp" alt="Logo Multirepuestos rG" class="site-logo">
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#inicio" class="logo-link">
+                <!-- Solo usar Multirepuesto.png en tamanio controlado -->
+                <img src="Multirepuesto.png" alt="MultirepuestosRG Logo" class="nav-logo">
             </a>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#marcas">Marcas Aliadas</a></li>
-                <li><a href="#historia">Nosotros</a></li>
-                <li><a href="#contacto" class="btn-nav">Contactar</a></li>
-            </ul>
+            
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#historia">Nuestra Historia</a></li>
+                    <li><a href="#marcas">Marcas de Élite</a></li>
+                </ul>
+                <a href="#contacto" class="btn-neon">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar Ahora
+                </a>
+            </nav>
+
+            <div class="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero-clean pt-offset">
-        <div class="container hero-grid">
-            <div class="hero-content fade-up text-center-mobile">
-                <div class="tag-pill">Garantía Total</div>
-                <h1 class="hero-title">El latido de tu moto <span>nunca se detiene</span></h1>
-                <p class="hero-desc">Soluciones exactas con el mejor catálogo en repuestos y lubricantes de alto rendimiento. Calidad excepcional, desde 2018.</p>
-                <div class="hero-cta-group">
-                    <a href="#marcas" class="btn-primary main-btn">Ver el Catálogo</a>
-                    <a href="https://wa.me/50684058142" target="_blank" class="btn-secondary outline-btn">Atención por Whatsapp</a>
+    <section id="inicio" class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-content">
+            <div class="hero-text align-reveal">
+                <span class="badge-premium"><i class="fa-solid fa-bolt"></i> Rendimiento Supremo</span>
+                <h1 class="hero-title">El latido mecánico <br><span class="text-gradient">nunca se detiene</span></h1>
+                <p class="hero-subtitle">En MultirepuestosRG impulsamos tu libertad. Accede al catálogo más robusto de repuestos originales, lubricantes de alta gama y accesorios que dominan el asfalto.</p>
+                <div class="hero-actions">
+                    <a href="#marcas" class="btn-primary">Descubrir Catálogo</a>
+                    <a href="https://wa.me/50684058142" target="_blank" class="btn-outline">
+                        Atención Técnica <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="stats-glass mt-5">
+                    <div class="stat-item">
+                        <span class="stat-number">+6</span>
+                        <span class="stat-label">Años de Exp.</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Calidad Garantizada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Historia -->
+    <section id="historia" class="history-section py-large">
+        <div class="container history-grid">
+            <div class="history-visual align-reveal-left">
+                <!-- Utilizando la imagen optimizada -->
+                <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.02.59_PM.webp" alt="MultirepuestosRG Local" class="history-main-img">
+                <div class="floating-year badge-neon">
+                    <span>Est. 2018</span>
                 </div>
             </div>
             
-            <div class="hero-visual fade-in hero-visual-container">
-                <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM.webp" alt="Repuestos Premium" class="hero-image-main">
-                <div class="glass-float-card bottom-left">
-                    <span class="highlight-number">+6</span>
-                    <span class="highlight-text">Años de<br>Liderazgo</span>
-                </div>
+            <div class="history-text align-reveal-right">
+                <h4 class="section-tag">— Quiénes Somos</h4>
+                <h2 class="section-title">Especialistas desde 2018</h2>
+                <p class="history-paragraph">
+                    <b>MultirepuestosRG</b> nació de la pasión absoluta por el motor de dos ruedas. Desde nuestra fundación en 2018, entendimos que una motocicleta no es solo un medio de transporte, es una extensión de quien la pilotea.
+                </p>
+                <p class="history-paragraph">
+                    Nuestro compromiso ha evolucionado con el tiempo, forjando alianzas estratégicas con los gigantes de la industria global. Hoy, somos más que una tienda: somos tu taller de confianza, donde combinamos conocimiento técnico de precisión con un inventario selecto que respalda cada kilómetro de tu viaje.
+                </p>
+                <ul class="history-features mt-4">
+                    <li><i class="fa-solid fa-check-circle neon-check"></i> Asesoramiento Técnico de Nivel Experto</li>
+                    <li><i class="fa-solid fa-check-circle neon-check"></i> Cobertura Nacional e Internacional en Partes</li>
+                    <li><i class="fa-solid fa-check-circle neon-check"></i> Stock Crítico en Lubricación y Accesorios</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Marcas Aliadas Section -->
-    <section id="marcas" class="brands-clean section-py">
-        <div class="container">
-            <div class="title-wrapper text-center fade-up">
-                <span class="subtitle">Componentes de Élite</span>
-                <h2>Nuestras Marcas Aliadas</h2>
-                <p class="section-desc">Trabajamos exclusivamente con fabricantes reconocidos mundialmente para asegurar el desempeño y la protección de tu motor.</p>
-            </div>
+    <!-- Marcas Aliadas y Legado -->
+    <section id="marcas" class="brands-section py-large bg-darker">
+        <div class="container text-center align-reveal">
+            <h4 class="section-tag">— Aliados Estratégicos</h4>
+            <h2 class="section-title text-center">Motores y Legados</h2>
+            <p class="brands-subtitle mx-auto">Seleccionamos las marcas más prestigiosas porque tu seguridad y desempeño están por encima de todo. Conoce a los gigantes que respaldan tu máquina.</p>
+        </div>
+
+        <div class="container brands-grid mt-5">
             
-            <div class="brands-showcase-grid fade-up delay-show">
-                <!-- Brand: Bajaj -->
-                <div class="brand-item-card">
-                    <div class="brand-img-box">
-                        <img src="Bajaj_Motorcycles_logo.svg.png" alt="Bajaj Logo" class="brand-logo-img">
-                    </div>
-                    <div class="brand-info">
-                        <h4>Bajaj Orig.</h4>
-                        <p>Repuestos Originales OEM</p>
-                    </div>
+            <!-- Marca 1: NGK -->
+            <div class="brand-card card-glass align-reveal-bottom">
+                <div class="brand-img-wrap ngk-bg">
+                    <img src="ngk.png" alt="NGK Logo">
                 </div>
-
-                <!-- Brand: Genesis -->
-                <div class="brand-item-card">
-                    <div class="brand-img-box">
-                        <img src="Logos-MOTOS-Genesis.jpg" alt="Genesis Logo" class="brand-logo-img square-fit">
-                    </div>
-                    <div class="brand-info">
-                        <h4>Genesis</h4>
-                        <p>Refacciones Genuinas</p>
-                    </div>
-                </div>
-
-                <!-- Brand: Motul -->
-                <div class="brand-item-card">
-                    <div class="brand-img-box">
-                        <img src="Motul_logo.svg.png" alt="Motul Logo" class="brand-logo-img">
-                    </div>
-                    <div class="brand-info">
-                        <h4>Motul</h4>
-                        <p>Lubricantes de Competición</p>
-                    </div>
-                </div>
-
-                <!-- Brand: Liqui Moly -->
-                <div class="brand-item-card">
-                    <div class="brand-img-box">
-                        <img src="Liqui-moly.svg.png" alt="Liqui Moly Logo" class="brand-logo-img">
-                    </div>
-                    <div class="brand-info">
-                        <h4>Liqui Moly</h4>
-                        <p>Aditivos Alemanes</p>
-                    </div>
+                <div class="brand-content">
+                    <span class="brand-origin"><img src="https://flagcdn.com/24x18/jp.png" alt="Japan"> Japón</span>
+                    <h3>NGK Spark Plugs</h3>
+                    <p>Fundada en 1936 en Japón, NGK es indiscutiblemente la marca líder mundial en chisperos y tecnología de encendido. Su precisión cerámica y durabilidad han ganado campeonatos de F1 y MotoGP.</p>
                 </div>
             </div>
+
+            <!-- Marca 2: Biker -->
+            <div class="brand-card card-glass align-reveal-bottom">
+                <div class="brand-img-wrap">
+                    <img src="biker.png" alt="Biker Accesorios Logo">
+                </div>
+                <div class="brand-content">
+                    <span class="brand-origin"><img src="https://flagcdn.com/24x18/co.png" alt="Colombia"> Colombia</span>
+                    <h3>Biker Accesorios</h3>
+                    <p>Con diseño y manufactura colombiana, se especializan en protecciones de alto impacto y accesorios estéticos de punta. Biker combina estilo agresivo con una seguridad pasiva sin igual.</p>
+                </div>
+            </div>
+
+            <!-- Marca 3: Motul -->
+            <div class="brand-card card-glass align-reveal-bottom">
+                <div class="brand-img-wrap">
+                    <img src="Motul_logo.svg.png" alt="Motul Logo">
+                </div>
+                <div class="brand-content">
+                    <span class="brand-origin"><img src="https://flagcdn.com/24x18/fr.png" alt="France"> Francia</span>
+                    <h3>Motul</h3>
+                    <p>Desde 1853, esta casa francesa ha estado en el núcleo de la ingeniería de lubricantes. Creadores del primer aceite 100% sintético, confían su química extrema en las condiciones de competencia más severas del planeta.</p>
+                </div>
+            </div>
+
+            <!-- Marca 4: Liqui Moly -->
+            <div class="brand-card card-glass align-reveal-bottom">
+                <div class="brand-img-wrap">
+                    <img src="Liqui-moly.svg.png" alt="Liqui Moly Logo">
+                </div>
+                <div class="brand-content">
+                    <span class="brand-origin"><img src="https://flagcdn.com/24x18/de.png" alt="Germany"> Alemania</span>
+                    <h3>Liqui Moly</h3>
+                    <p>Pura ingeniería alemana fundada en 1957. Reconocidos mundialmente por sus aditivos protectores y aceites antifricción. Liqui Moly garantiza que tu motor internamente se preserve intacto por años.</p>
+                </div>
+            </div>
+
+            <!-- Marca 5: Bajaj -->
+            <div class="brand-card card-glass align-reveal-bottom">
+                <div class="brand-img-wrap">
+                    <img src="Bajaj_Motorcycles_logo.svg.png" alt="Bajaj Logo">
+                </div>
+                <div class="brand-content">
+                    <span class="brand-origin"><img src="https://flagcdn.com/24x18/in.png" alt="India"> India</span>
+                    <h3>Bajaj</h3>
+                    <p>Operando desde 1945, Bajaj es el tercer fabricante más grande del mundo. Contamos con sus refacciones originales (OEM) que certifican la geometría e integridad perfecta para modelos como Pulsar y Dominar.</p>
+                </div>
+            </div>
+
+            <!-- Marca 6: Genesis -->
+            <div class="brand-card card-glass align-reveal-bottom">
+                <div class="brand-img-wrap bg-white-override">
+                    <img src="Logos-MOTOS-Genesis.jpg" alt="Genesis Logo">
+                </div>
+                <div class="brand-content">
+                    <span class="brand-origin"><i class="fa-solid fa-earth-americas"></i> Las Américas</span>
+                    <h3>Génesis</h3>
+                    <p>La opción definitiva para la viabilidad de trayectos largos y terrenos difíciles. Génesis proporciona repuestos de resistencia industrial muy valorados en las condiciones viales extremas de Centroamérica y más allá.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Nosotros / Grid Information -->
-    <section id="historia" class="features-clean bg-light-gray section-py">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-img-wrapper fade-left">
-                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.02.59_PM.webp" alt="Local Multirepuestos" class="feature-cover-img">
-                </div>
-                <div class="feature-text-wrapper fade-right">
-                    <span class="subtitle">Nuestra Filosofía</span>
-                    <h2>Excelencia Mecánica <br>En Cada Entregable</h2>
-                    <p>En Multirepuestos rG, no solo cruzamos piezas sobre un mostrador. Asesoramos de manera especializada y puntual a cada cliente. Tu moto es una inversión y entendemos que requiere atención crítica y repuestos confiables probados en distintas condiciones de ruta.</p>
-                    
-                    <div class="icon-list mt-class">
-                        <div class="icon-item">
-                            <span class="icon-circle">✓</span>
-                            <span>Catálogo rigurosamente seleccionado</span>
-                        </div>
-                        <div class="icon-item">
-                            <span class="icon-circle">✓</span>
-                            <span>Atención técnica real</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call To Action -->
-    <section id="contacto" class="cta-direct fade-up text-center section-py">
-        <div class="container cta-container-clean">
-            <h2>¿Buscas cotizar de inmediato?</h2>
-            <p>Envíanos un mensaje. Respondemos con agilidad y buscamos la mejor opción para tu motocicleta.</p>
-            <a href="https://wa.me/50684058142" target="_blank" class="btn-primary large-action">
-                Ir a WhatsApp (8405-8142)
+    <!-- Parallax o CTA Impactante -->
+    <section id="contacto" class="cta-direct bg-gradient-cta py-large">
+        <div class="container text-center align-reveal">
+            <h2 class="display-cta">¿Tu Máquina Necesita Un Upgrade?</h2>
+            <p class="cta-desc mx-auto">No dejes la vida de tu motor en manos equivocadas. Comunícate con nuestros especialistas ahora y obtén el repuesto exacto que requieres.</p>
+            <a href="https://wa.me/50684058142" target="_blank" class="btn-massive-neon mt-4 hover-scale">
+                <i class="fa-brands fa-whatsapp"></i> Chat Rápido (8405-8142)
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-clean">
-        <div class="container text-center pt-pb">
-            <img src="logo%20motos.webp" alt="Logo Footer Multirepuestos" class="footer-logo">
-            <p class="footer-moto">Componentes y piezas de la más alta integridad. Tu confianza al rodar.</p>
-            <div class="footer-copyright">
-                &copy; 2026 Multirepuestos rG. Todos los derechos reservados.
+    <!-- Footer Elegante -->
+    <footer class="footer-dark text-center">
+        <div class="container">
+            <div class="footer-brand">
+                <img src="Multirepuesto.png" alt="MultirepuestosRG Logo Menor" class="footer-logo">
+            </div>
+            <p class="footer-tagline">El Latido Mecánico Nunca Se Detiene.</p>
+            
+            <div class="footer-socials my-4">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <div class="footer-copy">
+                &copy; <span id="currentYear">2026</span> MultirepuestosRG. Todos los derechos comerciales reservados. <br>
+                <span>Desarrollado para la excelencia.</span>
             </div>
         </div>
     </footer>
 
-    <!-- Botón Whatsapp -->
+    <!-- Botón Whatsapp Flotante -->
     <a href="https://wa.me/50684058142" class="whatsapp-float hover-scale" target="_blank">
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+        <svg viewBox="0 0 24 24" width="35" height="35" fill="currentColor">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.002-3.181-2.585-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.205.534 1.292.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087.159.058 1.011.477 1.184.564.173.087.289.129.332.202.043.073.043.423-.101.827z"></path>
         </svg>
     </a>
