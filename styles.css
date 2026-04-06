@@ -115,10 +115,10 @@ ul {
     align-items: center;
 }
 
-/* MANDATORY LOCK FOR LOGO, to avoid giant ugly logo */
+/* MANDATORY LOCK FOR LOGO, to avoid giant ugly logo but big enough for visibility */
 .nav-logo, .footer-logo {
     height: auto;
-    max-height: 48px; /* Restricción estricta */
+    max-height: 85px; /* Aumentado considerablemente */
     width: auto;
     object-fit: contain;
     transition: var(--transition);
@@ -421,92 +421,127 @@ ul {
     font-size: 1.15rem;
 }
 
-.brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+/* ==========================================================================
+   Logo Collage Section
+   ========================================================================== */
+.logo-collage-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 20px;
 }
 
-.card-glass {
-    background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 40px 30px;
+.logo-item {
     transition: var(--transition);
+    filter: grayscale(100%) opacity(0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo-item:hover {
+    filter: grayscale(0%) opacity(1) drop-shadow(0 0 25px var(--primary-glow));
+    transform: scale(1.15) translateY(-5px);
+}
+
+.logo-item img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Distintos tamaños asimétricos */
+.logo-bajaj img { height: 80px; width: auto; }
+.logo-motul img { height: 130px; width: auto; }
+.logo-liquimoly img { height: 100px; width: auto; }
+.logo-ngk img { height: 60px; width: auto; }
+.logo-biker img { height: 120px; width: auto; }
+.logo-genesis img { height: 90px; width: auto; }
+
+.img-bg-override {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px 25px;
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   Gallery Section
+   ========================================================================== */
+.gallery-section {
+    background-color: var(--bg-main);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+.gallery-item {
     position: relative;
     overflow: hidden;
-}
-
-.card-glass:hover {
-    transform: translateY(-10px);
-    border-color: var(--glass-border-hover);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 20px var(--primary-glow) inset;
-}
-
-.brand-img-wrap {
-    height: 80px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-/* Ensuring logos look good on dark mode without burning eyeballs */
-.brand-img-wrap img {
-    max-height: 55px;
-    max-width: 160px;
-    object-fit: contain;
-    filter: brightness(0.9) contrast(1.1); /* Subtle adjustment */
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
     transition: var(--transition);
 }
 
-.card-glass:hover .brand-img-wrap img {
-    filter: brightness(1.1) contrast(1.2);
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    filter: brightness(0.8) contrast(1.1);
 }
 
-/* Helper white bg for specific logos with bad dark-mode visibility */
-.bg-white-override, .ngk-bg {
-    background-color: rgba(255, 255, 255, 0.9);
-    display: inline-flex;
-    padding: 10px 15px;
-    border-radius: 8px;
-    justify-content: center !important;
+.gallery-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 20px var(--primary-glow) inset;
+    z-index: 2;
 }
 
-.brand-content {
-    text-align: left;
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1) contrast(1.2);
 }
 
-.brand-origin {
-    display: inline-flex;
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 75, 0, 0.75); /* Naranja translúcido */
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-    font-weight: 700;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 3;
 }
 
-.brand-origin img {
-    width: 20px;
-    height: auto;
-    border-radius: 2px;
+.gallery-overlay h4 {
+    color: #FFF;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-.brand-origin i { opacity: 0.7;}
-
-.brand-content h3 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
 }
 
-.brand-content p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
+.gallery-item:hover .gallery-overlay h4 {
+    transform: translateY(0);
 }
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
 
 /* ==========================================================================
    CTA Section
