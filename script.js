@@ -37,43 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => revealObserver.observe(el));
 
     // ==========================================
-    // 4. ANIMATED COUNTERS
-    // ==========================================
-    const counters = document.querySelectorAll('.counter__num[data-target]');
-    let countersDone = false;
-    
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !countersDone) {
-                countersDone = true;
-                counters.forEach(counter => {
-                    const target = +counter.dataset.target;
-                    const duration = 2000;
-                    const startTime = performance.now();
-                    
-                    function update(currentTime) {
-                        const elapsed = currentTime - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        // Ease out cubic
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        counter.textContent = Math.floor(eased * target);
-                        if (progress < 1) {
-                            requestAnimationFrame(update);
-                        } else {
-                            counter.textContent = target;
-                        }
-                    }
-                    requestAnimationFrame(update);
-                });
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    if (counters.length > 0) {
-        counterObserver.observe(counters[0].closest('.hero__counters'));
-    }
-
-    // ==========================================
     // 5. FLOATING PARTICLES
     // ==========================================
     const particleContainer = document.getElementById('particles');
