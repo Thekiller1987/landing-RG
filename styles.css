@@ -77,7 +77,7 @@ ul { list-style: none; }
     max-width: 1200px; margin: 0 auto; padding: 0 24px;
     display: flex; align-items: center; justify-content: space-between;
 }
-.nav__logo img { height: 55px; object-fit: contain; filter: brightness(0) invert(1); transition: transform 0.3s; }
+.nav__logo img { height: 50px; object-fit: contain; transition: transform 0.3s; border-radius: 6px; }
 .nav__logo:hover img { transform: scale(1.05); }
 .nav__menu { display: flex; gap: 32px; }
 .nav__menu a {
