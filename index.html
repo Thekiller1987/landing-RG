@@ -3,451 +3,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MultirepuestosRG - Repuestos y accesorios para motos y carros. Precios mayorista y minorista. Aceites, luces LED, halógenos, aditivos y más. Si no lo tenemos, te lo conseguimos.">
-    <title>MultirepuestosRG | Repuestos de Moto & Carro — Mayorista y Minorista</title>
-    <!-- Google Fonts -->
+    <meta name="description" content="MultirepuestosRG — Especialistas en repuestos de moto y carro. Precios mayorista y minorista. Originales, genéricos y calidad OEM.">
+    <title>MultirepuestosRG | Repuestos de Moto & Carro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="styles.css?v=5.0">
+    <link rel="stylesheet" href="styles.css?v=7.0">
 </head>
 <body>
-    
-    <!-- ==================== NAVBAR ==================== -->
-    <header class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#inicio" class="logo-link">
-                <img src="Multirepuesto.png" alt="MultirepuestosRG Logo" class="nav-logo">
-            </a>
-            
-            <nav class="nav-menu" id="navMenu">
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#marcas">Marcas</a></li>
-                    <li><a href="#galeria">Local</a></li>
-                    <li><a href="#tiktok">TikTok</a></li>
-                    <li><a href="#ubicacion">Ubicación</a></li>
-                </ul>
-                <a href="https://wa.me/50684058142" target="_blank" class="btn-cta-nav">
-                    <i class="fa-brands fa-whatsapp"></i> Cotizar
-                </a>
-            </nav>
 
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+    <!-- NAVBAR -->
+    <header class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">
+                <img src="Multirepuesto.png" alt="MultirepuestosRG">
+            </a>
+            <nav class="nav__menu" id="navMenu">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#marcas">Marcas</a>
+                <a href="#galeria">Local</a>
+                <a href="#tiktok">TikTok</a>
+                <a href="#ubicacion">Mapa</a>
+            </nav>
+            <a href="https://wa.me/50684058142" target="_blank" class="nav__cta">
+                <i class="fa-brands fa-whatsapp"></i> Cotizar
+            </a>
+            <button class="nav__toggle" id="navToggle" aria-label="Menú">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- ==================== HERO ==================== -->
+    <!-- HERO -->
     <section id="inicio" class="hero">
-        <div class="hero-bg">
-            <div class="hero-gradient"></div>
-        </div>
-        <div class="container hero-content">
-            <div class="hero-badge anim-up">
-                <i class="fa-solid fa-tags"></i> Precios Mayorista & Minorista
+        <div class="hero__particles" id="particles"></div>
+        <div class="hero__glow"></div>
+        <div class="hero__content">
+            <div class="hero__badge reveal">
+                <span class="pulse-dot"></span> Precios Mayorista & Minorista
             </div>
-            <h1 class="hero-title anim-up d1">
-                Repuestos para<br>
-                <span class="hero-accent">motos y carros</span>
+            <h1 class="hero__title reveal d1">
+                El repuesto que<br>
+                <span class="gradient-text">tu vehículo necesita</span>
             </h1>
-            <p class="hero-desc anim-up d2">
-                Más de 6 años especializándonos en repuestos de moto y accesorios de las mejores marcas. También trabajamos con repuestos de carro, luces LED, halógenos, aceites y aditivos. Originales, genéricos y calidad OEM — <strong>si no lo tenemos, te lo conseguimos.</strong>
+            <p class="hero__sub reveal d2">
+                Especializados en motos con repuestos originales, genéricos y calidad OEM. También trabajamos con carros, luces LED, halógenos, aceites y aditivos. <strong>Si no lo tenemos, te lo conseguimos.</strong>
             </p>
-            <div class="hero-btns anim-up d3">
-                <a href="https://wa.me/50684058142" target="_blank" class="btn btn-primary">
-                    <i class="fa-brands fa-whatsapp"></i> Cotizar Ahora
+            <div class="hero__actions reveal d3">
+                <a href="https://wa.me/50684058142" target="_blank" class="btn btn--primary btn--glow">
+                    <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
                 </a>
-                <a href="#servicios" class="btn btn-ghost">
-                    Ver Servicios <i class="fa-solid fa-arrow-down"></i>
+                <a href="#servicios" class="btn btn--outline">
+                    Explorar <i class="fa-solid fa-chevron-down"></i>
                 </a>
             </div>
-            <div class="hero-stats anim-up d4">
-                <div class="stat">
-                    <span class="stat-num">+6</span>
-                    <span class="stat-txt">Años</span>
+            <div class="hero__counters reveal d4">
+                <div class="counter">
+                    <span class="counter__num" data-target="6">0</span><span class="counter__plus">+</span>
+                    <span class="counter__label">Años</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">🏍️</span>
-                    <span class="stat-txt">Motos</span>
+                <div class="counter__sep"></div>
+                <div class="counter">
+                    <span class="counter__num" data-target="5000">0</span><span class="counter__plus">+</span>
+                    <span class="counter__label">Clientes</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">❤️</span>
-                    <span class="stat-txt">Cliente primero</span>
+                <div class="counter__sep"></div>
+                <div class="counter">
+                    <span class="counter__num" data-target="6">0</span><span class="counter__plus"></span>
+                    <span class="counter__label">Marcas Élite</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-num">$$</span>
-                    <span class="stat-txt">Mayorista</span>
-                </div>
+            </div>
+        </div>
+        <div class="hero__scroll">
+            <div class="scroll-indicator">
+                <div class="scroll-dot"></div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== HISTORIA ==================== -->
-    <section id="historia" class="section section-alt">
-        <div class="container">
-            <div class="history-layout">
-                <div class="history-img anim-left">
-                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.02.59_PM.webp" alt="MultirepuestosRG Local">
-                    <div class="year-badge">EST. 2018</div>
-                </div>
-                <div class="history-content anim-right">
-                    <span class="section-label">Nuestra Historia</span>
-                    <h2 class="section-heading">Tu satisfacción es nuestro motor</h2>
-                    <p>
-                        <strong>MultirepuestosRG</strong> nació en 2018 con la visión de ser una tienda completa de repuestos 
-                        para motos y carros. Con el tiempo, nos hemos especializado principalmente en <strong>motocicletas</strong>, 
-                        donde brindamos la más amplia variedad: repuestos originales, genéricos de calidad OEM, lubricantes, 
-                        aditivos, luces LED y halógenos.
-                    </p>
-                    <p>
-                        También manejamos repuestos y accesorios de carro. Lo que nos diferencia es simple: 
-                        <strong>nos preocupamos genuinamente por cada cliente.</strong> Manejamos precios mayorista y minorista, 
-                        y si no tenemos lo que buscás en stock, nos movemos rápido para conseguirlo.
-                    </p>
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <i class="fa-solid fa-heart"></i>
-                            <span>El cliente siempre es primero</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fa-solid fa-motorcycle"></i>
-                            <span>Especialistas en Moto + Carro</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fa-solid fa-lightbulb"></i>
-                            <span>Luces LED, Halógenos y Accesorios</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fa-solid fa-oil-can"></i>
-                            <span>Aceites y Aditivos Premium</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <span>¿No lo tenemos? ¡Te lo conseguimos!</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- BRAND MARQUEE -->
+    <div class="marquee">
+        <div class="marquee__track">
+            <span>BAJAJ</span><span>•</span>
+            <span>MOTUL</span><span>•</span>
+            <span>LIQUI MOLY</span><span>•</span>
+            <span>NGK</span><span>•</span>
+            <span>BIKER</span><span>•</span>
+            <span>GENESIS</span><span>•</span>
+            <span>BAJAJ</span><span>•</span>
+            <span>MOTUL</span><span>•</span>
+            <span>LIQUI MOLY</span><span>•</span>
+            <span>NGK</span><span>•</span>
+            <span>BIKER</span><span>•</span>
+            <span>GENESIS</span><span>•</span>
         </div>
-    </section>
+    </div>
 
-    <!-- ==================== SERVICIOS ==================== -->
+    <!-- SERVICIOS -->
     <section id="servicios" class="section">
-        <div class="container text-center">
-            <span class="section-label"><i class="fa-solid fa-gears"></i> Qué Ofrecemos</span>
-            <h2 class="section-heading">Todo para tu vehículo en un solo lugar</h2>
-            <p class="section-desc">No importa si es moto o carro — tenemos los repuestos, accesorios y lubricantes que necesitas a los mejores precios del mercado.</p>
-        </div>
-        <div class="container services-grid">
-            <div class="service-card anim-up">
-                <div class="service-icon">
-                    <i class="fa-solid fa-motorcycle"></i>
-                </div>
-                <h3>Repuestos de Moto</h3>
-                <p>Piezas originales y genéricas de alta calidad para todas las marcas: Bajaj, Honda, Yamaha, Suzuki y más.</p>
+        <div class="container">
+            <div class="section__header reveal">
+                <span class="tag">Qué hacemos</span>
+                <h2 class="title-xl">Todo para tu vehículo,<br><span class="gradient-text">en un solo lugar</span></h2>
             </div>
-            <div class="service-card anim-up d1">
-                <div class="service-icon">
-                    <i class="fa-solid fa-car"></i>
+            <div class="services">
+                <div class="svc reveal">
+                    <div class="svc__icon"><i class="fa-solid fa-motorcycle"></i></div>
+                    <h3>Repuestos de Moto</h3>
+                    <p>Piezas originales, genéricas y calidad OEM para Bajaj, Honda, Yamaha, Suzuki y más.</p>
                 </div>
-                <h3>Repuestos de Carro</h3>
-                <p>Filtros, pastillas de freno, correas, rodamientos y todo tipo de repuestos automotrices para tu vehículo.</p>
-            </div>
-            <div class="service-card anim-up d2">
-                <div class="service-icon">
-                    <i class="fa-solid fa-lightbulb"></i>
+                <div class="svc reveal d1">
+                    <div class="svc__icon"><i class="fa-solid fa-car"></i></div>
+                    <h3>Repuestos de Carro</h3>
+                    <p>Filtros, pastillas, correas, rodamientos y repuestos automotrices seleccionados.</p>
                 </div>
-                <h3>Luces LED & Halógenos</h3>
-                <p>Iluminación de alto rendimiento: luces LED, halógenos, barras de luz y accesorios de iluminación para moto y carro.</p>
-            </div>
-            <div class="service-card anim-up d3">
-                <div class="service-icon">
-                    <i class="fa-solid fa-oil-can"></i>
+                <div class="svc reveal d2">
+                    <div class="svc__icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>Luces LED & Halógenos</h3>
+                    <p>Iluminación de alto rendimiento para moto y carro. Barras LED, faros y más.</p>
                 </div>
-                <h3>Aceites & Aditivos</h3>
-                <p>Aceites sintéticos y semisintéticos de Motul, Liqui Moly y más. Aditivos para motor, caja y radiador.</p>
-            </div>
-            <div class="service-card anim-up d4">
-                <div class="service-icon">
-                    <i class="fa-solid fa-helmet-safety"></i>
+                <div class="svc reveal d3">
+                    <div class="svc__icon"><i class="fa-solid fa-oil-can"></i></div>
+                    <h3>Aceites & Aditivos</h3>
+                    <p>Motul, Liqui Moly y más. Sintéticos, semisintéticos, aditivos para motor y caja.</p>
                 </div>
-                <h3>Accesorios</h3>
-                <p>Cascos, guantes, protecciones, manubrios, espejos, forros y todo lo que necesitas para tu moto y carro.</p>
-            </div>
-            <div class="service-card anim-up d5">
-                <div class="service-icon">
-                    <i class="fa-solid fa-truck-fast"></i>
+                <div class="svc reveal d4">
+                    <div class="svc__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Accesorios</h3>
+                    <p>Cascos, guantes, espejos, manubrios, forros y todo para personalizar tu moto.</p>
                 </div>
-                <h3>Te Lo Conseguimos</h3>
-                <p>¿No encontrás lo que buscás? Cotizamos cualquier repuesto con los mejores precios y te lo conseguimos rápido.</p>
+                <div class="svc reveal d5">
+                    <div class="svc__icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Te Lo Conseguimos</h3>
+                    <p>¿No lo encontrás? Cotizamos con los mejores precios y te lo conseguimos rápido.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== MARCAS ==================== -->
+    <!-- HISTORIA -->
+    <section class="section section--dark">
+        <div class="container">
+            <div class="story">
+                <div class="story__img reveal-left">
+                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.02.59_PM.webp" alt="MultirepuestosRG">
+                    <div class="story__badge">EST. 2018</div>
+                </div>
+                <div class="story__text reveal-right">
+                    <span class="tag">Nuestra Historia</span>
+                    <h2 class="title-xl">Tu satisfacción<br>es lo que nos mueve</h2>
+                    <p>Nacimos en 2018 con una visión clara: ser la tienda de repuestos donde el cliente siempre sea lo primero. Nos hemos especializado en motocicletas, ofreciendo la más amplia variedad de repuestos, y también trabajamos con carros.</p>
+                    <p>Manejamos repuestos originales, genéricos de calidad OEM, lubricantes premium, aditivos y accesorios. Con precios mayorista y minorista — <strong>y si no lo tenemos, te lo conseguimos.</strong></p>
+                    <div class="story__features">
+                        <div class="feat"><i class="fa-solid fa-heart"></i> El cliente es primero</div>
+                        <div class="feat"><i class="fa-solid fa-motorcycle"></i> Especialistas en moto</div>
+                        <div class="feat"><i class="fa-solid fa-tags"></i> Mayorista y minorista</div>
+                        <div class="feat"><i class="fa-solid fa-search"></i> Lo que no tenemos, lo conseguimos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARCAS -->
     <section id="marcas" class="section">
-        <div class="container text-center">
-            <span class="section-label">Aliados Estratégicos</span>
-            <h2 class="section-heading">Las marcas que avalan nuestra calidad</h2>
-            <p class="section-desc">Trabajamos exclusivamente con marcas líderes mundiales para garantizar rendimiento y durabilidad en cada repuesto.</p>
-        </div>
-        <div class="container brands-strip">
-            <div class="brand-card anim-up">
-                <div class="brand-logo-wrap">
+        <div class="container">
+            <div class="section__header text-center reveal">
+                <span class="tag">Marcas de Élite</span>
+                <h2 class="title-xl">Respaldados por<br><span class="gradient-text">los mejores del mundo</span></h2>
+            </div>
+            <div class="brands">
+                <div class="brand reveal">
                     <img src="Bajaj_Motorcycles_logo.svg.png" alt="Bajaj">
+                    <div class="brand__info">
+                        <h4>Bajaj</h4>
+                        <p>Repuestos OEM de la India</p>
+                    </div>
                 </div>
-                <h4>Bajaj</h4>
-                <p>Repuestos OEM originales de la India.</p>
-            </div>
-            <div class="brand-card anim-up d1">
-                <div class="brand-logo-wrap">
+                <div class="brand reveal d1">
                     <img src="Motul_logo.svg.png" alt="Motul">
+                    <div class="brand__info">
+                        <h4>Motul</h4>
+                        <p>Ingeniería francesa</p>
+                    </div>
                 </div>
-                <h4>Motul</h4>
-                <p>Aceite 100% sintético. Ingeniería francesa.</p>
-            </div>
-            <div class="brand-card anim-up d2">
-                <div class="brand-logo-wrap">
+                <div class="brand reveal d2">
                     <img src="Liqui-moly.svg.png" alt="Liqui Moly">
+                    <div class="brand__info">
+                        <h4>Liqui Moly</h4>
+                        <p>Tecnología alemana</p>
+                    </div>
                 </div>
-                <h4>Liqui Moly</h4>
-                <p>Aditivos y aceites. Pura tecnología alemana.</p>
-            </div>
-            <div class="brand-card anim-up d3">
-                <div class="brand-logo-wrap">
+                <div class="brand reveal d3">
                     <img src="ngk.png" alt="NGK">
+                    <div class="brand__info">
+                        <h4>NGK</h4>
+                        <p>Bujías mundiales</p>
+                    </div>
                 </div>
-                <h4>NGK</h4>
-                <p>Bujías mundiales. Campeones de MotoGP.</p>
-            </div>
-            <div class="brand-card anim-up d4">
-                <div class="brand-logo-wrap">
+                <div class="brand reveal d4">
                     <img src="biker.png" alt="Biker">
+                    <div class="brand__info">
+                        <h4>Biker</h4>
+                        <p>Estilo colombiano</p>
+                    </div>
                 </div>
-                <h4>Biker</h4>
-                <p>Accesorios y estilo colombiano.</p>
-            </div>
-            <div class="brand-card anim-up d5">
-                <div class="brand-logo-wrap">
+                <div class="brand reveal d5">
                     <img src="Logos-MOTOS-Genesis.jpg" alt="Genesis">
-                </div>
-                <h4>Genesis</h4>
-                <p>Piezas de alta resistencia industrial.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== GALERÍA ==================== -->
-    <section id="galeria" class="section section-alt">
-        <div class="container text-center">
-            <span class="section-label">Nuestro Local</span>
-            <h2 class="section-heading">Conoce nuestras instalaciones</h2>
-            <p class="section-desc">Un espacio diseñado para brindarte el stock completo y la mejor asesoría presencial.</p>
-        </div>
-        <div class="container gallery-grid">
-            <div class="gallery-card anim-up" onclick="openLightbox(this)">
-                <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.02.59_PM.webp" alt="Instalaciones 1">
-                <div class="gallery-info">
-                    <span>Tu equipo de confianza 💪</span>
-                    <i class="fa-solid fa-expand"></i>
-                </div>
-            </div>
-            <div class="gallery-card anim-up d1" onclick="openLightbox(this)">
-                <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM.webp" alt="Instalaciones 2">
-                <div class="gallery-info">
-                    <span>Siempre listos para vos 🔥</span>
-                    <i class="fa-solid fa-expand"></i>
-                </div>
-            </div>
-            <div class="gallery-card anim-up d2" onclick="openLightbox(this)">
-                <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_1.webp" alt="Instalaciones 3">
-                <div class="gallery-info">
-                    <span>Miles de productos disponibles 🏍️</span>
-                    <i class="fa-solid fa-expand"></i>
-                </div>
-            </div>
-            <div class="gallery-card anim-up d3" onclick="openLightbox(this)">
-                <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_2.webp" alt="Instalaciones 4">
-                <div class="gallery-info">
-                    <span>Todo organizado para vos 📦</span>
-                    <i class="fa-solid fa-expand"></i>
-                </div>
-            </div>
-            <div class="gallery-card anim-up d4" onclick="openLightbox(this)">
-                <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_3.webp" alt="Instalaciones 5">
-                <div class="gallery-info">
-                    <span>Calidad que se ve y se siente ⚡</span>
-                    <i class="fa-solid fa-expand"></i>
-                </div>
-            </div>
-            <div class="gallery-card anim-up d5" onclick="openLightbox(this)">
-                <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_4.webp" alt="Instalaciones 6">
-                <div class="gallery-info">
-                    <span>La calidad se impone 🏆</span>
-                    <i class="fa-solid fa-expand"></i>
+                    <div class="brand__info">
+                        <h4>Genesis</h4>
+                        <p>Alta resistencia</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== TIKTOK SECTION ==================== -->
+    <!-- GALERÍA -->
+    <section id="galeria" class="section section--dark">
+        <div class="container">
+            <div class="section__header text-center reveal">
+                <span class="tag">Nuestro Local</span>
+                <h2 class="title-xl">Visitá nuestras<br><span class="gradient-text">instalaciones</span></h2>
+                <p class="subtitle">Un espacio diseñado para brindarte la mejor atención y el stock más completo.</p>
+            </div>
+            <div class="gallery">
+                <div class="gal reveal" onclick="openLightbox(this)">
+                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.02.59_PM.webp" alt="Local 1">
+                    <div class="gal__over"><span>Tu equipo de confianza 💪</span><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal reveal d1" onclick="openLightbox(this)">
+                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM.webp" alt="Local 2">
+                    <div class="gal__over"><span>Siempre listos para vos 🔥</span><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal reveal d2" onclick="openLightbox(this)">
+                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_1.webp" alt="Local 3">
+                    <div class="gal__over"><span>Miles de productos 🏍️</span><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal reveal d3" onclick="openLightbox(this)">
+                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_2.webp" alt="Local 4">
+                    <div class="gal__over"><span>Todo organizado 📦</span><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal reveal d4" onclick="openLightbox(this)">
+                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_3.webp" alt="Local 5">
+                    <div class="gal__over"><span>Calidad garantizada ⚡</span><i class="fa-solid fa-expand"></i></div>
+                </div>
+                <div class="gal reveal d5" onclick="openLightbox(this)">
+                    <img src="imagenes_optimizadas/WhatsApp_Image_2026-04-06_at_3.03.01_PM_4.webp" alt="Local 6">
+                    <div class="gal__over"><span>La calidad se impone 🏆</span><i class="fa-solid fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIKTOK -->
     <section id="tiktok" class="section">
-        <div class="container text-center">
-            <span class="section-label"><i class="fa-brands fa-tiktok"></i> Síguenos en TikTok</span>
-            <h2 class="section-heading">Contenido en vivo desde el taller</h2>
-            <p class="section-desc">Mira nuestros videos, consejos de mecánica y contenido exclusivo directamente desde nuestro taller.</p>
-        </div>
-        <div class="container tiktok-area">
-            <div class="tiktok-embed-wrap anim-up">
-                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@multirepuestosrg_oficial" data-unique-id="multirepuestosrg_oficial" data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
-                    <section>
-                        <a target="_blank" href="https://www.tiktok.com/@multirepuestosrg_oficial?refer=creator_embed">@multirepuestosrg_oficial</a>
-                    </section>
-                </blockquote>
+        <div class="container">
+            <div class="section__header text-center reveal">
+                <span class="tag"><i class="fa-brands fa-tiktok"></i> TikTok</span>
+                <h2 class="title-xl">Contenido directo<br><span class="gradient-text">desde el taller</span></h2>
             </div>
-            <div class="tiktok-side anim-right">
-                <div class="tiktok-cta-card">
-                    <div class="tiktok-icon">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </div>
-                    <h3>@multirepuestosrg_oficial</h3>
-                    <p>Videos de repuestos, instalaciones, consejos mecánicos y mucho más. ¡Síguenos para no perderte nada!</p>
-                    <a href="https://www.tiktok.com/@multirepuestosrg_oficial?is_from_webapp=1&sender_device=pc" target="_blank" class="btn btn-tiktok">
-                        <i class="fa-brands fa-tiktok"></i> Ir a TikTok
-                    </a>
+            <div class="tiktok-layout">
+                <div class="tiktok-embed-box reveal-left">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@multirepuestosrg_oficial" data-unique-id="multirepuestosrg_oficial" data-embed-type="creator" style="max-width:780px;min-width:288px;">
+                        <section><a target="_blank" href="https://www.tiktok.com/@multirepuestosrg_oficial?refer=creator_embed">@multirepuestosrg_oficial</a></section>
+                    </blockquote>
                 </div>
-                <div class="social-links-grid">
-                    <a href="https://www.tiktok.com/@multirepuestosrg_oficial" target="_blank" class="social-link-card tiktok-card">
-                        <i class="fa-brands fa-tiktok"></i>
-                        <span>TikTok</span>
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" class="social-link-card facebook-card">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="https://maps.app.goo.gl/etL1uxhF4KopE5VD7" target="_blank" class="social-link-card maps-card">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <span>Google Maps</span>
-                    </a>
-                    <a href="https://wa.me/50684058142" target="_blank" class="social-link-card whatsapp-card">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>WhatsApp</span>
-                    </a>
+                <div class="tiktok-sidebar reveal-right">
+                    <div class="tiktok-card">
+                        <div class="tiktok-card__icon"><i class="fa-brands fa-tiktok"></i></div>
+                        <h3>@multirepuestosrg_oficial</h3>
+                        <p>Videos de repuestos, tips de mecánica y contenido exclusivo desde nuestro taller.</p>
+                        <a href="https://www.tiktok.com/@multirepuestosrg_oficial" target="_blank" class="btn btn--dark">
+                            <i class="fa-brands fa-tiktok"></i> Seguir en TikTok
+                        </a>
+                    </div>
+                    <div class="social-grid">
+                        <a href="https://www.tiktok.com/@multirepuestosrg_oficial" target="_blank" class="social-btn social-btn--tiktok">
+                            <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" class="social-btn social-btn--fb">
+                            <i class="fa-brands fa-facebook-f"></i><span>Facebook</span>
+                        </a>
+                        <a href="https://maps.app.goo.gl/etL1uxhF4KopE5VD7" target="_blank" class="social-btn social-btn--maps">
+                            <i class="fa-solid fa-map-location-dot"></i><span>Maps</span>
+                        </a>
+                        <a href="https://wa.me/50684058142" target="_blank" class="social-btn social-btn--wa">
+                            <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== UBICACIÓN / MAPA ==================== -->
-    <section id="ubicacion" class="section section-alt">
-        <div class="container text-center">
-            <span class="section-label"><i class="fa-solid fa-location-dot"></i> Encuéntranos</span>
-            <h2 class="section-heading">Visítanos en persona</h2>
-            <p class="section-desc">Ven a conocer nuestro taller y recibe asesoría técnica presencial. Estamos listos para atenderte.</p>
-        </div>
-        <div class="container map-area anim-up">
-            <div class="map-wrapper">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.5!2d-86.2!3d12.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA2JzAwLjAiTiA4NsKwMTInMDAuMCJX!5e0!3m2!1ses!2sni!4v1" 
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+    <!-- MAPA -->
+    <section id="ubicacion" class="section section--dark">
+        <div class="container">
+            <div class="section__header text-center reveal">
+                <span class="tag"><i class="fa-solid fa-location-dot"></i> Ubicación</span>
+                <h2 class="title-xl">Vení a<br><span class="gradient-text">conocernos</span></h2>
             </div>
-            <div class="map-info-bar">
-                <div class="map-detail">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        <strong>Horario</strong>
-                        <span>Lunes a Sábado · 8:00 AM - 6:00 PM</span>
-                    </div>
+            <div class="map-box reveal">
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.5!2d-86.2!3d12.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA2JzAwLjAiTiA4NsKwMTInMDAuMCJX!5e0!3m2!1ses!2sni!4v1" width="100%" height="400" style="border:0" allowfullscreen loading="lazy"></iframe>
                 </div>
-                <div class="map-detail">
-                    <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <strong>Teléfono</strong>
-                        <span>8405-8142</span>
-                    </div>
+                <div class="map-bar">
+                    <div class="map-info"><i class="fa-solid fa-clock"></i><div><strong>Horario</strong><span>Lun-Sáb · 8AM-6PM</span></div></div>
+                    <div class="map-info"><i class="fa-solid fa-phone"></i><div><strong>Teléfono</strong><span>8405-8142</span></div></div>
+                    <a href="https://maps.app.goo.gl/etL1uxhF4KopE5VD7" target="_blank" class="btn btn--primary btn--sm"><i class="fa-solid fa-diamond-turn-right"></i> Cómo Llegar</a>
                 </div>
-                <a href="https://maps.app.goo.gl/etL1uxhF4KopE5VD7" target="_blank" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-diamond-turn-right"></i> Cómo Llegar
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- ==================== CTA FINAL ==================== -->
-    <section class="cta-section">
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta__glow"></div>
         <div class="container text-center">
-            <h2 class="cta-title anim-up">¿Listo para darle lo mejor a tu moto?</h2>
-            <p class="cta-desc anim-up d1">Comunícate con nuestros especialistas y obtén el repuesto exacto que necesitas.</p>
-            <a href="https://wa.me/50684058142" target="_blank" class="btn btn-whatsapp-big anim-up d2">
-                <i class="fa-brands fa-whatsapp"></i> Chatea con Nosotros
+            <h2 class="cta__title reveal">¿Listo para darle lo mejor<br><span class="gradient-text">a tu vehículo?</span></h2>
+            <p class="cta__sub reveal d1">Cotizá con nosotros y conseguí el repuesto que necesitás al mejor precio.</p>
+            <a href="https://wa.me/50684058142" target="_blank" class="btn btn--wa-big reveal d2">
+                <i class="fa-brands fa-whatsapp"></i> Chateá con Nosotros
             </a>
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col footer-brand-col">
-                    <img src="Multirepuesto.png" alt="MultirepuestosRG" class="footer-logo">
-                    <p>Tu tienda de confianza en repuestos y accesorios para motocicletas desde 2018.</p>
+            <div class="footer__grid">
+                <div class="footer__col footer__brand">
+                    <img src="Multirepuesto.png" alt="MultirepuestosRG" class="footer__logo">
+                    <p>Tu tienda de confianza en repuestos y accesorios desde 2018.</p>
                 </div>
-                <div class="footer-col">
+                <div class="footer__col">
                     <h4>Navegación</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#historia">Historia</a></li>
-                        <li><a href="#marcas">Marcas</a></li>
-                        <li><a href="#galeria">Local</a></li>
-                    </ul>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#marcas">Marcas</a>
+                    <a href="#galeria">Local</a>
                 </div>
-                <div class="footer-col">
-                    <h4>Redes Sociales</h4>
-                    <ul>
-                        <li><a href="https://www.tiktok.com/@multirepuestosrg_oficial" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
-                        <li><a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
-                        <li><a href="https://maps.app.goo.gl/etL1uxhF4KopE5VD7" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Google Maps</a></li>
-                        <li><a href="https://wa.me/50684058142" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
-                    </ul>
+                <div class="footer__col">
+                    <h4>Redes</h4>
+                    <a href="https://www.tiktok.com/@multirepuestosrg_oficial" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <a href="https://maps.app.goo.gl/etL1uxhF4KopE5VD7" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Google Maps</a>
+                    <a href="https://wa.me/50684058142" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
                 </div>
-                <div class="footer-col">
+                <div class="footer__col">
                     <h4>Contacto</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-phone"></i> 8405-8142</li>
-                        <li><i class="fa-solid fa-clock"></i> Lun-Sáb: 8am-6pm</li>
-                    </ul>
+                    <span><i class="fa-solid fa-phone"></i> 8405-8142</span>
+                    <span><i class="fa-solid fa-clock"></i> Lun-Sáb 8am-6pm</span>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2026</span> MultirepuestosRG. Todos los derechos reservados.</p>
+            <div class="footer__bottom">
+                <p>&copy; <span id="currentYear">2026</span> MultirepuestosRG · Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating -->
-    <a href="https://wa.me/50684058142" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- WA FLOAT -->
+    <a href="https://wa.me/50684058142" target="_blank" class="wa-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-    <!-- Lightbox Modal -->
-    <div id="lightboxModal" class="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar">&times;</button>
-        <img class="lightbox-img" id="lightboxImg" alt="Imagen expandida">
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" onclick="closeLightbox()">&times;</button>
+        <img class="lightbox__img" id="lightboxImg" alt="">
     </div>
 
-    <!-- TikTok Embed Script -->
     <script async src="https://www.tiktok.com/embed.js"></script>
-    <!-- Main JS -->
-    <script src="script.js?v=5.0"></script>
+    <script src="script.js?v=7.0"></script>
 </body>
 </html>
