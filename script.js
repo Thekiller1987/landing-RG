@@ -1,112 +1,116 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Navigation Scroll Effect
-    const navbar = document.querySelector('.navbar');
+    // ==========================================
+    // 1. Navbar scroll effect
+    // ==========================================
+    const navbar = document.getElementById('navbar');
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    // 2. Intersection Observer for Scroll Animations
-    const animatedElements = document.querySelectorAll('.align-reveal, .align-reveal-left, .align-reveal-right, .align-reveal-bottom');
-
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    animatedElements.forEach(el => {
-        observer.observe(el);
-    });
-
-    // 3. Mobile Navigation (Hamburger Menu simple toggle)
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    // ==========================================
+    // 2. Mobile hamburger menu
+    // ==========================================
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
     
-    if (mobileToggle) {
+    if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
-            // For a basic implementation, we just toggle display 
-            // of .nav-menu when acting on mobile. 
-            // In CSS, .nav-menu is display: none on mobile.
-            if (navMenu.style.display === 'flex') {
-                navMenu.style.display = 'none';
-            } else {
-                navMenu.style.display = 'flex';
-                navMenu.style.flexDirection = 'column';
-                navMenu.style.position = 'absolute';
-                navMenu.style.top = '100%';
-                navMenu.style.left = '0';
-                navMenu.style.width = '100%';
-                navMenu.style.background = 'rgba(10, 10, 10, 0.95)';
-                navMenu.style.padding = '20px';
-                navMenu.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
-            }
+            navMenu.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
         });
     }
 
-    // 4. Smooth Scrolling for Anchor Links
+    // ==========================================
+    // 3. Scroll animations (Intersection Observer)
+    // ==========================================
+    const animElements = document.querySelectorAll('.anim-up, .anim-left, .anim-right');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    animElements.forEach(el => observer.observe(el));
+
+    // ==========================================
+    // 4. Smooth scrolling for anchor links
+    // ==========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                // If mobile menu is open, close it on click
-                if(window.innerWidth <= 768 && navMenu) {
-                    navMenu.style.display = 'none';
-                }
-
+            const id = this.getAttribute('href');
+            if (id === '#') return;
+            const target = document.querySelector(id);
+            if (target) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // 5. Update Current Year in Footer
-    const yearSpan = document.getElementById('currentYear');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+    // ==========================================
+    // 5. Year update in footer
+    // ==========================================
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // ==========================================
+    // 6. Lightbox - close on click outside image
+    // ==========================================
+    const lightbox = document.getElementById('lightboxModal');
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
     }
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
 });
 
-// ==========================================================================
-// Lightbox Global Functions
-// ==========================================================================
-function openLightbox(imageSrc) {
+// ==========================================
+// GLOBAL: Lightbox functions
+// ==========================================
+function openLightbox(card) {
+    const img = card.querySelector('img');
+    if (!img) return;
+    
     const modal = document.getElementById('lightboxModal');
     const modalImg = document.getElementById('lightboxImg');
     
-    if(modal && modalImg) {
-        modal.style.display = 'block';
-        modalImg.src = imageSrc;
-        // Evitar que la página haga scroll mientras el modal está abierto
+    if (modal && modalImg) {
+        modalImg.src = img.src;
+        modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 }
 
 function closeLightbox() {
     const modal = document.getElementById('lightboxModal');
-    if(modal) {
-        modal.style.display = 'none';
-        // Restaurar el scroll
+    if (modal) {
+        modal.classList.remove('active');
         document.body.style.overflow = '';
     }
 }
