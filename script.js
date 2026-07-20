@@ -1,3 +1,37 @@
+// ==========================================
+// MultirepuestosRG v10.0 — Nueva Identidad
+// ==========================================
+
+// ==========================================
+// PRELOADER
+// ==========================================
+(function() {
+    // Bloquear scroll mientras carga
+    document.documentElement.style.overflow = 'hidden';
+
+    function hidePreloader() {
+        const preloader = document.getElementById('preloader');
+        const fill = document.getElementById('preloaderFill');
+        if (!preloader) return;
+        // Completa la barra al 100%
+        if (fill) fill.style.width = '100%';
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+            document.documentElement.style.overflow = '';
+            // Eliminar del DOM tras la transicion
+            setTimeout(() => preloader.remove(), 700);
+        }, 400);
+    }
+
+    if (document.readyState === 'complete') {
+        hidePreloader();
+    } else {
+        window.addEventListener('load', hidePreloader);
+        // Fallback por si tarda mas de 4s
+        setTimeout(hidePreloader, 4000);
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
@@ -33,38 +67,81 @@ document.addEventListener('DOMContentLoaded', () => {
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
     reveals.forEach(el => revealObserver.observe(el));
+
+    // ==========================================
+    // 4. ANIMATED COUNTERS
+    // ==========================================
+    const counters = document.querySelectorAll('.stat__number[data-target]');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    function animateCounter(el) {
+        const target = parseInt(el.getAttribute('data-target'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 2000;
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            el.textContent = Math.floor(current).toLocaleString() + suffix;
+        }, duration / steps);
+    }
 
     // ==========================================
     // 5. FLOATING PARTICLES
     // ==========================================
     const particleContainer = document.getElementById('particles');
     if (particleContainer) {
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 35; i++) {
             const particle = document.createElement('div');
+            const size = Math.random() * 3 + 1;
+            const isGold = Math.random() > 0.6;
             particle.style.cssText = `
                 position: absolute;
-                width: ${Math.random() * 3 + 1}px;
-                height: ${Math.random() * 3 + 1}px;
-                background: rgba(255, 90, 31, ${Math.random() * 0.3 + 0.05});
+                width: ${size}px;
+                height: ${size}px;
+                background: ${isGold
+                    ? `rgba(245, 166, 35, ${Math.random() * 0.25 + 0.05})`
+                    : `rgba(255, 90, 31, ${Math.random() * 0.25 + 0.05})`
+                };
                 border-radius: 50%;
                 left: ${Math.random() * 100}%;
                 top: ${Math.random() * 100}%;
-                animation: particleFloat ${Math.random() * 8 + 6}s ease-in-out infinite;
-                animation-delay: ${Math.random() * 5}s;
+                animation: particleFloat${i % 3} ${Math.random() * 10 + 8}s ease-in-out infinite;
+                animation-delay: ${Math.random() * 6}s;
             `;
             particleContainer.appendChild(particle);
         }
 
-        // Add the particle animation
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes particleFloat {
+            @keyframes particleFloat0 {
                 0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-                25% { transform: translate(${Math.random() > 0.5 ? '' : '-'}${Math.random()*60+20}px, -${Math.random()*60+20}px) scale(1.5); opacity: 0.7; }
-                50% { transform: translate(${Math.random() > 0.5 ? '' : '-'}${Math.random()*40+10}px, ${Math.random()*40+10}px) scale(0.8); opacity: 0.2; }
-                75% { transform: translate(-${Math.random()*50+15}px, -${Math.random()*30+10}px) scale(1.2); opacity: 0.5; }
+                33% { transform: translate(60px, -80px) scale(1.4); opacity: 0.6; }
+                66% { transform: translate(-40px, -40px) scale(0.8); opacity: 0.15; }
+            }
+            @keyframes particleFloat1 {
+                0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+                33% { transform: translate(-50px, -60px) scale(1.6); opacity: 0.5; }
+                66% { transform: translate(30px, 30px) scale(0.7); opacity: 0.1; }
+            }
+            @keyframes particleFloat2 {
+                0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+                50% { transform: translate(40px, -100px) scale(1.3); opacity: 0.55; }
             }
         `;
         document.head.appendChild(style);
@@ -99,6 +176,33 @@ document.addEventListener('DOMContentLoaded', () => {
         lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // ==========================================
+    // 9. MARQUEE PAUSE ON HOVER
+    // ==========================================
+    const marqueeTrack = document.querySelector('.marquee__track');
+    if (marqueeTrack) {
+        const marqueeEl = marqueeTrack.parentElement;
+        marqueeEl.addEventListener('mouseenter', () => {
+            marqueeTrack.style.animationPlayState = 'paused';
+        });
+        marqueeEl.addEventListener('mouseleave', () => {
+            marqueeTrack.style.animationPlayState = 'running';
+        });
+    }
+
+    // ==========================================
+    // 10. DIST CARD HOVER GLOW
+    // ==========================================
+    document.querySelectorAll('.dist-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty('--mx', `${x}%`);
+            card.style.setProperty('--my', `${y}%`);
+        });
+    });
 
 });
 
